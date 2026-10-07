@@ -2,7 +2,17 @@
 (function () {
   "use strict";
 
-  /* Mobile menu */
+  /* Header: transparent → solid on scroll */
+var header = document.getElementById("siteHeader");
+if (header) {
+  var onScroll = function () {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
+
+/* Mobile menu */
   var toggle = document.getElementById("menuToggle");
   var nav = document.getElementById("mainNav");
   if (toggle && nav) {
